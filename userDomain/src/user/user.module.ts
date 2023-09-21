@@ -11,7 +11,7 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
     name: 'USER_SERVICE',
     transport: Transport.RMQ,
     options: {
-      urls: ['amqps://vcxaamlr:2qU-Gs5REuY8-YAZ3schBE5rB_yhIAhM@rat.rmq2.cloudamqp.com/vcxaamlr'],
+      urls: [process.env.RABBITMQ_URL],
       queue: 'main_queue',
       queueOptions: {
         durable: false,
